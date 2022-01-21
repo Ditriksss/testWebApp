@@ -1,9 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('test') {
             steps {
-                sh 'dotnet --info'
+                sh 'dotnet test'
+            }
+        }
+		
+		stage('publish') {
+            steps {
+                sh 'dotnet publish testWebApp\testWebApp.csproj -c Release -o testWebApp\publish\'
             }
         }
     }
