@@ -9,7 +9,7 @@ pipeline {
 		
 		stage('publish') {
             steps {
-                sh 'dotnet publish testWebApp\testWebApp.csproj -c Release -o testWebApp\publish\'
+                sh 'dotnet publish testWebApp/testWebApp.csproj -c Release -o testWebApp/publish/'
             }
         }
     }
